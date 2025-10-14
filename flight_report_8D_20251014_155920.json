@@ -1,0 +1,69 @@
+{
+  "flight_id": "JPG-Aug-27th-2025-12-00PM-Flight-Airdata_20250827_1000",
+  "timestamp_generated": "2025-10-14T15:59:20.429149",
+  "processing_time_seconds": 0.464208,
+  "bay_mapping": {
+    "bay_id": "8D",
+    "bay_name": "Bay 8D Secondary Structure",
+    "confidence_score": 0.0,
+    "coverage_percentage": 0.0
+  },
+  "flight_metrics": {
+    "max_altitude_ft": 38.713912,
+    "avg_altitude_ft": 4.658088720230306,
+    "max_speed_mph": 15.4572554,
+    "avg_speed_mph": 0.6928015692227166,
+    "total_distance_miles": 0.05513178216666667,
+    "battery_start_pct": "47",
+    "battery_end_pct": "24",
+    "battery_consumed_pct": "23",
+    "gps_quality_avg": 17.92802931169851
+  },
+  "quality_score": {
+    "overall_score": 0.8831258849567887,
+    "grade": "B",
+    "gps_quality": 1.0,
+    "battery_health": 0.54,
+    "flight_stability": 0.9756294247839431,
+    "coverage_quality": 1.0,
+    "equipment_performance": 0.9
+  },
+  "inspection_classification": {
+    "inspection_type": "overview",
+    "confidence": 0.8
+  },
+  "media_summary": {
+    "total_photos": 7,
+    "total_videos": 485,
+    "video_duration_minutes": 2.9740166666666665
+  },
+  "flight_path": {
+    "total_distance_miles": 0.2772903382268998,
+    "coordinate_count": 3821,
+    "is_circular": true,
+    "is_linear": true,
+    "circuit_completion": 0.9661696610999684
+  },
+  "anomalies": [],
+  "automated_annotations": {
+    "flight_duration_minutes": 11.5,
+    "max_altitude_ft": 38.713912,
+    "total_distance_miles": 0.05513178216666667,
+    "media_captured": {
+      "photos": 7,
+      "videos": 485,
+      "video_duration_minutes": 2.9740166666666665
+    },
+    "quality_grade": "B",
+    "anomalies_detected": 0,
+    "processing_timestamp": "2025-10-14T15:59:20.429149",
+    "bay_identification": {
+      "bay_id": "8D",
+      "confidence": 0.0,
+      "coverage_percent": 0.0
+    }
+  },
+  "human_verification_needed": [
+    "bay_identification"
+  ]
+}
