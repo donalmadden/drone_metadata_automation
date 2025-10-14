@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-Demo script for the Drone Metadata Automation System
+Demo script for the Drone Metadata Automation System (Legacy)
 
-This script demonstrates the key capabilities of the system with sample data
-and provides a quick verification that the implementation works correctly.
+NOTE: This demo uses synthetic data and original functionality.
+
+For Phase 1 video processing capabilities with REAL drone videos, use:
+    python demo_video_processing.py
+
+This script demonstrates the original capabilities with sample data.
 """
 
 import os
