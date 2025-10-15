@@ -48,7 +48,7 @@ class MarkdownFormatter(BaseFormatter):
         try:
             # Create output filename (e.g., DJI_0593.MP4.md)
             output_filename = f"{video_name}.md"
-            output_path = self._get_output_path(output_filename)
+            output_path = self._get_output_path(output_filename, result, '.md')
             
             # Check if file exists and handle accordingly
             if self._check_file_exists(output_path):

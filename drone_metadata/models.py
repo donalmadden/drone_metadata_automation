@@ -445,18 +445,12 @@ class MissionType(Enum):
     """Types of drone missions for video classification."""
     BOX = "box"
     SAFETY = "safety"
-    PERIMETER = "perimeter"
-    SURVEY = "survey"
-    OVERVIEW = "overview"
-    DETAILED = "detailed"
-    ANGLES = "angles"
-    UNKNOWN = "unknown"
 
 
 @dataclass
 class MissionData:
     """Mission classification and parameters for drone videos."""
-    mission_type: MissionType = MissionType.UNKNOWN
+    mission_type: MissionType = MissionType.BOX
     bay_designation: Optional[str] = None
     mission_id: Optional[str] = None
     pilot_name: Optional[str] = None
@@ -474,8 +468,8 @@ class MissionData:
     mission_notes: Optional[str] = None
     
     def is_classified(self) -> bool:
-        """Check if mission has been classified beyond unknown."""
-        return self.mission_type != MissionType.UNKNOWN
+        """Check if mission has been classified."""
+        return self.mission_type in [MissionType.BOX, MissionType.SAFETY]
     
     def get_mission_code(self) -> str:
         """Get standardized mission code for filing/organization."""

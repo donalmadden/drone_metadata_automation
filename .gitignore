@@ -261,3 +261,6 @@ extraction_temp/
 # Performance profiling
 *.prof
 *.profile
+
+# project folders
+output/

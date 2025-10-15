@@ -15,6 +15,10 @@ from typing import Any, Dict, List, Optional, Union
 from datetime import datetime
 
 from ..models import VideoAnalysisResult, VideoProcessingBatch
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .directory_organizer import DirectoryOrganizer
 
 
 logger = logging.getLogger(__name__)
@@ -38,6 +42,9 @@ class FormatterConfig:
     include_raw_metadata: bool = False
     include_processing_logs: bool = True
     generate_checksums: bool = False
+    
+    # Organization support
+    organizer: Optional['DirectoryOrganizer'] = None
     
     # Custom formatter-specific settings
     custom_settings: Dict[str, Any] = field(default_factory=dict)
@@ -86,9 +93,13 @@ class BaseFormatter(ABC):
                 self.logger.info(f"Overwriting existing file: {file_path}")
         return False
     
-    def _get_output_path(self, filename: str) -> Path:
+    def _get_output_path(self, filename: str, result: Optional[VideoAnalysisResult] = None, file_extension: str = None) -> Path:
         """Get the full output path for a filename."""
-        return Path(self.config.output_directory) / filename
+        # If organizer is configured and we have result info, use organized path
+        if self.config.organizer and result and file_extension:
+            return self.config.organizer.get_organized_output_path(result, file_extension, filename)
+        else:
+            return Path(self.config.output_directory) / filename
     
     def _log_processing_start(self, operation: str, target: str) -> None:
         """Log the start of a processing operation."""
